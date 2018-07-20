@@ -12,16 +12,17 @@ int random_origin_generator(){
     return r;
 }
 
-
-int randomise_origin(){
-    // for rect and circle svg mark up ,  set ran x and y coordinates
-    
+vector<int> randomise_origin(){
     
     int x = random_origin_generator();
+    int y = random_origin_generator();
     //int y = random_origin_generator();
-
-
-    return x;
+    vector<int> coordinates;
+    
+    coordinates.push_back(x);
+    coordinates.push_back(y);
+    
+    return coordinates;
 }
 /*
 void genCircle( string id_string ){
