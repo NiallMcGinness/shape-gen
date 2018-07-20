@@ -10,10 +10,12 @@ using namespace cv;
 
 
 Mat line_circle(int x, int y){
-     // Create black empty images
+  int radius = 16;
+  //line thickness of 0 sets line width to 1 pxel, negative number means a filled shape
+  int line_thickness = 0;
   Mat image = Mat::zeros( 64, 64, CV_8UC3 );
   image = Scalar(255,255,255);
-  circle(image, Point(x,y),16, Scalar(0,0,0),CV_DIST_L2, 8,0);
+  circle(image, Point(x,y),radius, Scalar(0,0,0),line_thickness, 8,0);
   //imshow("Image",image);
   /*
   circle 	( 	InputOutputArray  	img,
