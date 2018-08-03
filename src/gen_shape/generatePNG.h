@@ -30,8 +30,8 @@ private:
   vector<int> randomise_center_Points();
   vector<Point> randomise_star_Points();
   vector<Point> randomise_vector_rectangle_Points();
-  string createFilepath(string);
-  string outputDirectory;
+  String createFilepath(String id_string);
+  String outputDirectory;
   bool randomScaleSet;
  
 
