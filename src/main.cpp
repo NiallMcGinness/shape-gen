@@ -16,7 +16,7 @@ void select_shape_to_generate(string shape_type, string file_name, GeneratePNG P
 int main()
 {  
     
-    string output_dir("output/");
+    string output_dir("data/");
     string test_dir = output_dir + "test/";
     string train_dir = output_dir + "train/";
     string test_label_filepath = output_dir + "labels/test.csv";
@@ -24,7 +24,7 @@ int main()
 
     GenerateLabels labels;
 
-    int number_of_test_examples = 10;
+    int number_of_test_examples = 1000;
     string test_csv = labels.getExamples(number_of_test_examples);
     build_PNG(test_csv, test_dir);
 
@@ -32,6 +32,15 @@ int main()
     test_label_outputfile.open(test_label_filepath);
     test_label_outputfile << test_csv;
     test_label_outputfile.close();
+
+    int number_of_train_examples = 10000;
+    string train_csv = labels.getExamples(number_of_train_examples);
+    build_PNG(train_csv, train_dir);
+
+    ofstream train_label_outputfile;
+    train_label_outputfile.open(train_label_filepath);
+    train_label_outputfile << train_csv;
+    train_label_outputfile.close();
 
 }
 
